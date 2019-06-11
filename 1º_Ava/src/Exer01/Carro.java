@@ -1,95 +1,139 @@
 package Exer01;
 
+import Exer01.TipoMotor;
+
+	// EXERCÍCIO 1
 public class Carro {
-		
-		String placa;
-		String marca;
-		String modelo;
-		int ano;
-		double velMaxima;
-		double motor;
-		String cambio;
-		int marcha;
-		String estado;
-		
-		public String getPlaca() {
-			return placa;
-		}
-		public void setPlaca(String placa) {
-			this.placa = placa;
-		}
-		
-		public String getMarca() {
-			return marca;
-		}
-		public void setMarca(String marca) {
-			this.marca = marca;
-		}
-		
-		public String getModelo() {
-			return modelo;
-		}
-		public void setModelo(String modelo) {
-			this.modelo = modelo;
-		}
-		
-		public int getAno() {
-			return ano;
-		}
-		public void setAno(int ano) {
-			this.ano = ano;
-		}
-		
-		public double getVelMaxima() {
-			return velMaxima;
-		}
-		public void setVelMaxima(double velMaxima) {
-			this.velMaxima = velMaxima;
-		}
-		
-		//ESCOLHE MOTOR
-		public double getMotor() {
-			return motor;
-		}
-		public void setMotor(double motor) {
-			if (motor == 1.0 || motor == 2.0){
-				this.motor = motor;}
-			else {
-				System.out.println("Câmbio inválido");}
-			}
-		
-		//ESCOLHE CÂMBIO
-		public String getCambio() {
-			return cambio;
-		}
-		public void setCambio(String cambio){
-			if (cambio == "Manual" || cambio == "Automatico") { 
-				this.cambio = cambio;}
-			else {
-				System.out.println("Câmbio inválido");}
-			}
-		
-		//ESCOLHE MARCHA
-		public int getMarcha() {
-			return marcha;
-		}
-		public void setMarcha(int marcha) {
-			if (marcha <= 0 || marcha >= 6)
-				 System.out.println("Marcha inválida");
-			else 
-			this.marcha = marcha;
-			System.out.println("Carro com: " + marcha);}
-		
-			
-		//ESTADO CARRO
-		public String getEstado() {
-			return estado;
-		}
-		public void setEstado(String Estado) {
-			if (estado == "sim"){
-				System.out.println("O carro está ligado!");
-				this.estado = estado;}
-			else if (estado == "nao");{
-				System.out.println("O carro não estava ligado!");}	
-			this.estado = estado;}
+    private String placa;
+    private String marca;
+    private String modelo;
+    private String ano;
+    private Integer velocidadeMaxima;
+    private String tipoMotor;
+    private String tipoCambio;
+    private int marcha; 
+    private boolean estado;
+    
+    
+    // EXERCÍCIO 1.3
+    public void ligaCarro() {
+        if (estado != true) { //SE O CARRO ESTIVER DESLIGADO
+            estado = true;}   //CARRO LIGADO
+        else {		  	      //SE NÃO
+            estado = true;}   //CARRO JA ESTÁ LIGADO
+       	}
+    
+    // EXERCÍCIO 1.4
+    public void desligaCarro() {
+        if (estado != 	false) { //SE O CARRO ESTIVER LIGADO
+            estado = false;}	 //CARRO DESLIGADO
+        else {				 	 //SE NÃO
+            estado = false;}	 //CARRO JA ESTÁ DESLIGADO
+    	}
+    
+    // EXERCÍCIO 1.5
+    public void AcelerarAteVelocidadeMaxima() {
+        if (estado == true) {
+            if (tipoMotor.equals(tipoMotor.POT1)) {
+                for (int i = 0; velocidadeMaxima <= 100; i += 10) {
+                    velocidadeMaxima = i;
+                }
+            } else if (tipoMotor.equals(tipoMotor.POT2)) {
+                for (int i = 0; velocidadeMaxima <= 140; i += 20) {
+                    velocidadeMaxima = i;
+                }
+            }
+        }
+    }
+    
+    // EXERCÍCIO 1.6
+    public void frear() {
+        if (estado == true) {
+            if (tipoMotor.equals(tipoMotor.POT1)) {
+                for (int i = 0; velocidadeMaxima > 0; i -= 20) {
+                    velocidadeMaxima -= i;
+                }
+            }
+            if (tipoMotor.equals(tipoMotor.POT2)) {
+                for (int i = 0; velocidadeMaxima > 0; i -= 20) {
+                    velocidadeMaxima -= i;
+                }
+            }
+        }
+    }
+    
+    //GETTERS E OS SETTERS
+    public String getPlaca() {
+		return placa;
 	}
+
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public String getAno() {
+		return ano;
+	}
+
+	public void setAno(String ano) {
+		this.ano = ano;
+	}
+
+	public Integer getVelocidadeMaxima() {
+		return velocidadeMaxima;
+	}
+
+	public void setVelocidadeMaxima(Integer velocidadeMaxima) {
+		this.velocidadeMaxima = velocidadeMaxima;
+	}
+
+	public String getTipoMotor() {
+		return tipoMotor;
+	}
+
+	public void setTipoMotor(String tipoMotor) {
+		this.tipoMotor = tipoMotor;
+	}
+
+	public String getTipoCambio() {
+		return tipoCambio;
+	}
+
+	public void setTipoCambio(String tipoCambio) {
+		this.tipoCambio = tipoCambio;
+	}
+
+	public int getMarcha() {
+		return marcha;
+	}
+
+	public void setMarcha(int marcha) {
+		this.marcha = marcha;
+	}
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+    
+
+}

@@ -1,24 +1,26 @@
 package Exer01;
 
-import java.util.Scanner;
+import Exer02.Motor;
 
 public class ChamaCarro {
 
-	private static Scanner scan;
-
 	public static void main(String[] args) {
-		
-		scan = new Scanner(System.in);
-		
-		Carro car = new Carro();
-		
-		car.getPlaca();
-		car.getMarca();
-		car.getModelo();
-		car.getAno();
-		car.getCambio();
-		car.getMotor();
-		
+			
+		Carro carObjeto = new Carro();
+		carObjeto.getPlaca();
+		carObjeto.getMarca();
+		carObjeto.getModelo();
+		carObjeto.getAno();
+		carObjeto.getTipoCambio();
+		carObjeto.getTipoMotor();
+		carObjeto.ligaCarro();
+        carObjeto.desligaCarro();
+        carObjeto.AcelerarAteVelocidadeMaxima();
+        
+        //EXERCÍCIO 2.1
+        Motor motObjeto = new Motor();
+        motObjeto.getNumeroMotor();
+        motObjeto.getPotencia();
 
 	}
 
